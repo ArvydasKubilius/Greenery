@@ -8,33 +8,34 @@ public class CalculateStep {
 	
 	}
 	/**
-	 * To calculate how many steps of a person per km                        
+	 * To calculate how many steps a person takes per km                        
 	 * according to their height and gender.
 	 * 
 	 * Based on the stride length(length of each step).
 	 * Formula: Women .413 * height / Men .415 * height
 	 * 
-	 * @param  height, gender.         
-	 * @return number of steps.
+	 * @param profile
+	 * @return number of steps per km
 	 */
-	public static int step (int height, boolean gender){
-		int step = 0;
-		double stride_length = 0;
+	public static double step (BiometricProfile profile){
+		double step;
+		double stride_length;
+		double height = profile.getHeight();//convert from metres to centimetres
+		boolean gender = profile.getGender();
 		
 		if (gender) {
 			stride_length = 0.413 * height;
 			//convert to km
-			stride_length /= 100000;
+			stride_length /= 1000;
 			//System.out.println("stride_length: " + stride_length);
 		} else {
 			stride_length = 0.415 * height;
 			//convert to km
-			stride_length /= 100000;
-			System.out.println("stride_length: " + stride_length);
+			stride_length /= 1000;
+			//System.out.println("stride_length: " + stride_length);
 		} 
-		step = (int)Math.round(1/stride_length);
+		step = 1/stride_length;
 		
 		return step;
 	}
 }
-

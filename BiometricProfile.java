@@ -21,7 +21,7 @@ public class BiometricProfile {
 	 * @param height Sets height in metres
 	 * @param gender Sets gender (false = male, true = female)
 	 */
-	public BiometricProfile(int age, int weight, int height, boolean gender) {
+	public BiometricProfile(int age, double weight, double height, boolean gender) {
 		this.gender = gender;
 		this.age = age;
 		this.weight = weight;
