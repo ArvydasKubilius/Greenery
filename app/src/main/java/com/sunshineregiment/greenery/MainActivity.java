@@ -1,5 +1,12 @@
 package com.sunshineregiment.greenery;
 
+/**
+ * Object that handle the main activity after login
+ * 
+ * @author Sunshine Regiment
+ *
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +22,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+	/**
+	 * Show the fundamental layout of the app
+	 * 
+	 * @param the state of the application
+	 */
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+            	//When 2nd tab is chosen
                 if(tab.getPosition() == 2){
                     //get total steps
                     SharedPreferences prefs = getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
@@ -68,12 +82,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+	/**
+	 * Create options menu
+	 * 
+	 * @param menu
+	 * @return boolean true
+	 */
+	
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+	/**
+	 * Decide the action after the option is chosen
+	 * 
+	 * @param menu item
+	 * @return boolean true
+	 */
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
