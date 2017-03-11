@@ -6,7 +6,7 @@
 
 package conversion;
 
-public class ComplexConverter {
+public class SimpleConverter {
 
 	private boolean diesel;//flag: true = diesel, false = petrol
 	private int steps;//no units
@@ -15,7 +15,6 @@ public class ComplexConverter {
 	private double calories;//kcal
 	private double co2;//gram
 	private double treedays;//co2 absorbed by a tree in one day
-	private BiometricProfile profile;//data about the person (age, height, weight, gender)
 	
 	/**
 	 * Method for filling in attribute values
@@ -24,13 +23,10 @@ public class ComplexConverter {
 	 * Also acts as a wrapper for convertDiesel() and convertPetrol()
 	 */
 	public void convert() {
-		//estimate the number of steps taken to travel 1 km, based on height & gender
-		double steps_per_km = CalculateStep.step(profile);
-		distance = steps/steps_per_km;
-		
-		//todo: find calories per step based on biometric data
+		//1320 steps per km on average
+		distance = steps/1320;
 		//0.044 calories per step on average
-		calories = steps * Calories.calsPerStep(profile, steps_per_km);
+		calories = steps * 0.044;
 		
 		//based on engine type, the other calculations 
 		if (diesel)
@@ -67,7 +63,7 @@ public class ComplexConverter {
 		//2.68 kg of co2 per liter of diesel => 2680g of co2 per liter of diesel
 		co2 = fuel * 2680;
 		//60g of co2 per tree per day
-		treedays = co2/60;
+		treedays = co2/60;		
 	}
 	
 	
@@ -79,9 +75,8 @@ public class ComplexConverter {
 	 * @param stepsTaken total steps taken
 	 * @param dieselCar type of car engine (true = diesel, false = petrol)
 	 */
-	public ComplexConverter(int stepsTaken, BiometricProfile profile, boolean dieselCar) {
+	public SimpleConverter(int stepsTaken, boolean dieselCar) {
 		steps = stepsTaken;
-		this.profile = profile;
 		diesel = dieselCar;
 		convert();
 	}
@@ -92,7 +87,6 @@ public class ComplexConverter {
 	 */
 	public void set(int stepsTaken) {
 		steps = stepsTaken;
-		convert();
 	}
 	
 	/**
