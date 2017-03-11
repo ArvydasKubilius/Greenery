@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20034999534",
+    "project_id": "firebase-greenery"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20034999534:android:b9373453d6b6f792",
+        "android_client_info": {
+          "package_name": "com.sunshineregiment.greenery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20034999534-549rl7eafijfedo6ac00b14n08kkr4n7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sunshineregiment.greenery",
+            "certificate_hash": "b413a529a5521256eb59596521635a0219f7c24d"
+          }
+        },
+        {
+          "client_id": "20034999534-3bavbkeqv8k8jcmspad2ftveuvbib4ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrlPTYyhcvz3ZFOjatgjDvRKTUsDI9gI0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
