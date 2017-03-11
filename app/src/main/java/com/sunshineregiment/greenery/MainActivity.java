@@ -1,6 +1,7 @@
 package com.sunshineregiment.greenery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -77,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            return true;
+            Intent myIntent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(myIntent);
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }
