@@ -1,9 +1,10 @@
 /**
- * 
+ * Converts from height & gender to estimate of steps taken per km travelled.
+ * @author Sunshine Regiment
  */
 package conversion;
 
-public class CalculateStep {
+public final class CalculateStep {
 	public CalculateStep() {
 	
 	}
