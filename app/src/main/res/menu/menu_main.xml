@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.sunshineregiment.greenery.MainActivity">
     <item
+        android:id="@+id/enter_bio"
+        android:orderInCategory="100"
+        android:title="Enter Biometric Details"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="Log Out"

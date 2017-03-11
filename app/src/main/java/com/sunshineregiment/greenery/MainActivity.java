@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -59,13 +60,17 @@ public class MainActivity extends AppCompatActivity {
                     //get total steps
                     SharedPreferences prefs = getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
                     int steps = prefs.getInt("steps", 0);
-                    TextView dayTextView, weekTextView, lifeTextView;
+                    TextView dayTextView;
+                    TextView weekTextView;
+                    TextView lifeTextView;
                     dayTextView = (TextView) findViewById(R.id.steps_textView);
                     weekTextView = (TextView) findViewById(R.id.steps_textView2);
                     lifeTextView = (TextView) findViewById(R.id.steps_textView3);
-                    dayTextView.setText("" + steps + " Steps");
-                    weekTextView.setText("" + (steps+5432) + " Steps");
-                    lifeTextView.setText("" + (steps+87654) + " Steps");
+                    if(dayTextView != null && weekTextView != null  && lifeTextView != null) {
+                        dayTextView.setText("" + steps + " Steps");
+                        weekTextView.setText("" + (steps + 5432) + " Steps");
+                        lifeTextView.setText("" + (steps + 87654) + " Steps");
+                    }
                 }
                 viewPager.setCurrentItem(tab.getPosition());
             }
@@ -107,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             Intent myIntent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(myIntent);
+        } else if (id == R.id.enter_bio) {
+            Intent myIntent = new Intent(MainActivity.this, BiometricActivity.class);
             startActivity(myIntent);
         }
         return true;
