@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //add some tabs to it
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("StepCounterFragment"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 4"));
+        tabLayout.addTab(tabLayout.newTab().setText("YOUR IMPACT"));
+        tabLayout.addTab(tabLayout.newTab().setText("GRAPHS"));
+        tabLayout.addTab(tabLayout.newTab().setText("STEPS"));
+        tabLayout.addTab(tabLayout.newTab().setText("LEADERBOARDS"));
         //set the gravity
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 

@@ -23,7 +23,7 @@ import static android.support.v7.widget.AppCompatDrawableManager.get;
 public class Step_counter_fragment extends Fragment implements SensorEventListener {
 
 
-    private TextView textView;
+    private TextView dayTextView, weekTextView, lifeTextView;
 
     private SensorManager mSensorManager;
 
@@ -41,7 +41,9 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
 //            Log.d("stepcounterfragment", "onCreateView: NOT NULL ACT ");
 //        }
 
-        textView = (TextView) getActivity().findViewById(R.id.steps_textView);
+        dayTextView = (TextView) getActivity().findViewById(R.id.steps_textView);
+        weekTextView = (TextView) getActivity().findViewById(R.id.steps_textView2);
+        lifeTextView = (TextView) getActivity().findViewById(R.id.steps_textView3);
 
         mSensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         mStepCounterSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -61,13 +63,15 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
         }
         final int value2 = value;
         try {
-            if (textView != null) {
-                textView.getHandler().post(new Runnable() {
+            if (dayTextView != null && weekTextView != null && lifeTextView != null) {
+                dayTextView.getHandler().post(new Runnable() {
 
                     @Override
                     public void run() {
                         if (sensor.getType() == Sensor.TYPE_STEP_COUNTER || sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
-                            textView.setText("" + value2);
+                            dayTextView.setText("" + value2);
+                            weekTextView.setText("" + (value2+5432));
+                            lifeTextView.setText("" + (value2+87654));
                             SharedPreferences prefs = getContext().getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putInt("steps", value2);
@@ -76,7 +80,9 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
                     }
                 });
             } else {
-                textView = (TextView) getActivity().findViewById(R.id.steps_textView);
+                dayTextView = (TextView) getActivity().findViewById(R.id.steps_textView);
+                weekTextView = (TextView) getActivity().findViewById(R.id.steps_textView2);
+                lifeTextView = (TextView) getActivity().findViewById(R.id.steps_textView3);
             }
         } catch (Exception e) {
             //Do nothing
