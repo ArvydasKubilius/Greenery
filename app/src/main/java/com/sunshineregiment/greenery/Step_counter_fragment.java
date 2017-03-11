@@ -34,12 +34,6 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //debugging
-//        if (getActivity() == null){
-//            Log.d("stepcounterfragment", "onCreateView: NULL ACT ");
-//        } else {
-//            Log.d("stepcounterfragment", "onCreateView: NOT NULL ACT ");
-//        }
 
         mSensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         mStepCounterSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -65,9 +59,9 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
                     @Override
                     public void run() {
                         if (sensor.getType() == Sensor.TYPE_STEP_COUNTER || sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
-                            dayTextView.setText("" + value2);
-                            weekTextView.setText("" + (value2+5432));
-                            lifeTextView.setText("" + (value2+87654));
+                            dayTextView.setText("" + value2 + " Steps");
+                            weekTextView.setText("" + (value2+5432) + " Steps");
+                            lifeTextView.setText("" + (value2+87654) + " Steps");
                             SharedPreferences prefs = getContext().getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putInt("steps", value2);

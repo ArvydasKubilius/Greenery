@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
                     dayTextView = (TextView) findViewById(R.id.steps_textView);
                     weekTextView = (TextView) findViewById(R.id.steps_textView2);
                     lifeTextView = (TextView) findViewById(R.id.steps_textView3);
-                    dayTextView.setText("" + steps);
-                    weekTextView.setText("" + (steps+5432));
-                    lifeTextView.setText("" + (steps+87654));
+                    dayTextView.setText("" + steps + " Steps");
+                    weekTextView.setText("" + (steps+5432) + " Steps");
+                    lifeTextView.setText("" + (steps+87654) + " Steps");
                 }
                 viewPager.setCurrentItem(tab.getPosition());
             }
