@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int REQUEST_SIGNUP = 0;
 
 	/**
-	 * To display the login screen
+	 * Loads up the login screen
 	 * 
 	 * @param the state of the application
 	 */
