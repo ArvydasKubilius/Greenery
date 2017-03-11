@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,8 +8,63 @@
     <TextView
         android:id="@+id/section_label"
         android:textColor="#ffffff"
-        android:text="Leaderboards"
+        android:text="LEADERBOARD"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="16px"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/section_label2"
+        android:textColor="#ffffff"
+        android:text="Arvydas Kubilius           1436 g CO2 saved     "
+        android:layout_below="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16px"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/section_label3"
+        android:textColor="#ffffff"
+        android:text="Kiril Nedkov               1304 g CO2 saved"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/section_label2"
+        android:padding="16px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/section_label4"
+        android:textColor="#ffffff"
+        android:text="Dom Henjes               1261 g CO2 saved"
+        android:layout_width="wrap_content"
+        android:padding="16px"
+        android:layout_below="@+id/section_label3"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/section_label5"
+        android:textColor="#ffffff"
+        android:text="Sivarjuen Ravichandran       1179 g CO2 saved            "
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/section_label4"
+        android:padding="16px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/section_label6"
+        android:textColor="#ffffff"
+        android:text="Kathleen Chen             1138 g CO2 saved  "
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/section_label5"
+        android:padding="16px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
 
-</LinearLayout>
+
+
+</RelativeLayout>
