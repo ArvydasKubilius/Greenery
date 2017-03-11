@@ -30,15 +30,17 @@ public class Conversions {
         //estimate the number of steps taken to travel 1 km, based on height & gender
         double steps_per_km = CalculateStep.step(profile);
         distance = steps / steps_per_km;
-
-        //todo: find calories per step based on biometric data
-        //0.044 calories per step on average
-        calories = steps * 0.044;
+		
+		//estimate the number of calories used per step
+		calories = steps * Calories.calsPerStep(profile, steps_per_km);
 
         //based on engine type, the other calculations
-        if (diesel) {
+        if (diesel)
+        {
             convertDiesel();
-        } else {
+        }
+        else
+        {
             convertPetrol();
         }
     }
@@ -56,16 +58,20 @@ public class Conversions {
         //60g of co2 per tree per day
         treedays = co2 / 60;
     }
-
+    
     /**
-     * Petrol-based conversion extension
-     * <p>
-     * Converts from distance in km to fuel required, co2 emissions prevented and tree-days saved
-     */
-    private void convertPetrol() {
-
-    }
-
+	 * Petrol-based conversion extension
+	 * 
+	 * Converts from distance in km to fuel required, co2 emissions prevented and tree-days saved
+	 */
+	private void convertPetrol(){
+		//14.3km per liter for petrol engines, on average (cars manufactured in 2008)
+		fuel = distance/14.3;
+		//2.68 kg of co2 per liter of diesel => 2680g of co2 per liter of diesel
+		co2 = fuel * 2680;
+		//60g of co2 per tree per day
+		treedays = co2/60;
+	}
 
     /**
      * Constructor for 'Converter'
