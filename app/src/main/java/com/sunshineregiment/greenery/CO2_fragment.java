@@ -9,6 +9,7 @@ import android.view.View;
 import android.support.v4.app.Fragment;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Zikoz on 10/03/2017.
@@ -26,13 +27,31 @@ public class CO2_fragment extends Fragment {
     public void onResume() {
         super.onResume();
         ImageView image = (ImageView) getActivity().findViewById(R.id.img_switcher);
-        int n = 8;
+        TextView convertToLitres = (TextView) getActivity().findViewById(R.id.conversion_liters);
+        TextView convertToCo2 = (TextView) getActivity().findViewById(R.id.conversion_co2_grams);
+        TextView convertToTrees = (TextView) getActivity().findViewById(R.id.conversion_trees);
+
+        int n = 3;
         image.setScaleX(n);
         image.setScaleY(n);
-        drawTree(image);//.setImageResource(R.drawable.tree1);
-        //image.setScaleType(ImageView.ScaleType.FIT_XY);
-        //image.
-        // Normal case behavior follows
+
+        drawTree(image);
+        showLit(convertToLitres);
+        showLCo2(convertToCo2);
+        showTrees(convertToTrees);
+
+    }
+    public void showLit(TextView text){
+        double lit = 20;
+        text.setText("You have saved " + lit + " litres of fuel");
+    }
+    public void showLCo2(TextView text){
+        int co2 = 50000;
+        text.setText("You have saved " + co2 + " grams of CO2");
+    }
+    public void showTrees(TextView text){
+        double treesSaved = 100;
+        text.setText("You have saved "+ (int) treesSaved + " tree days of CO2");
     }
 
     public void drawTree(ImageView image) {
