@@ -58,7 +58,12 @@ public class SimpleConverter {
 	 * Converts from distance in km to fuel required, co2 emissions prevented and tree-days saved
 	 */
 	private void convertPetrol(){
-		
+		//14.3km per liter for petrol engines, on average (cars manufactured in 2008)
+		fuel = distance/14.3;
+		//2.68 kg of co2 per liter of diesel => 2680g of co2 per liter of diesel
+		co2 = fuel * 2680;
+		//60g of co2 per tree per day
+		treedays = co2/60;		
 	}
 	
 	
