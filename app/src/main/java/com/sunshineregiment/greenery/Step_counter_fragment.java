@@ -17,6 +17,7 @@ import android.widget.TextView;
 import static android.support.v7.widget.AppCompatDrawableManager.get;
 
 /**
+ * Dynamically counts steps taken by user using Google API, and fits into StepCounter class
  * Created by Zikoz on 10/03/2017.
  */
 
@@ -31,6 +32,10 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
 
     private Sensor mStepDetectorSensor;
 
+    /**
+     * Creates sensors to measure user's steps
+     */
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,10 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
 
         return inflater.inflate(R.layout.fragment_step_counter, container, false);
     }
+    
+    /**
+     * Set up listener to change step number when user walks
+     */
     @Override
     public void onSensorChanged(SensorEvent event) {
         final Sensor sensor = event.sensor;
@@ -84,6 +93,7 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
 
     }
 
+    
     public void onResume() {
 
         super.onResume();

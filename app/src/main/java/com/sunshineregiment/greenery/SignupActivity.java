@@ -7,6 +7,10 @@ import android.view.View;
 
 import butterknife.ButterKnife;
 
+/**
+ * Lets user register for new account - unfinished
+ */
+
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
@@ -17,6 +21,9 @@ public class SignupActivity extends AppCompatActivity {
         ButterKnife.inject(this);
     }
 
+    /**
+     * can either register (which takes you to main app functionality) or switch to login page
+     */
     public boolean onClick(View view){
         int id = view.getId();
         if (id == R.id.btn_signup){
