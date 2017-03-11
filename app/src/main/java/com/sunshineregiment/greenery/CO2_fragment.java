@@ -4,7 +4,6 @@ package com.sunshineregiment.greenery;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Telephony;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.v4.app.Fragment;
@@ -16,9 +15,6 @@ import android.widget.TextView;
  * Created by Zikoz on 10/03/2017.
  */
 public class CO2_fragment extends Fragment {
-    
-    private BiometricProfile profile;
-    private Conversions conversion;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,9 +23,12 @@ public class CO2_fragment extends Fragment {
 
     //private boolean resumeHasRun = false;
 
+    /**
+     * initialises the display values for the tab & prepares a conversion function based on user data
+     * 
+     */
     @Override
     public void onResume() {
-        
         super.onResume();
         ImageView image = (ImageView) getActivity().findViewById(R.id.img_switcher);
         TextView convertToLitres = (TextView) getActivity().findViewById(R.id.conversion_liters);
@@ -41,30 +40,39 @@ public class CO2_fragment extends Fragment {
         image.setScaleY(n);
 
         drawTree(image);
-        profile = new BiometricProfile(20, 70, 1.75, false);//age, weight, height, gender
-        conversion = new Conversions(2000,profile,true);//steps taken, profile, diesel engine (true = yes)
-        showLit(convertToLitres, conversion);
-        showLCo2(convertToCo2, conversion);
-        showTrees(convertToTrees, conversion);
+        showLit(convertToLitres);
+        showLCo2(convertToCo2);
+        showTrees(convertToTrees);
         
-        //todo: dynamically set these values
-
-        
-
     }
-    public void showLit(TextView text, Conversions conversion){
-        double lit = conversion.getFuel();
-        text.setText("You have saved " + (Math.floor(lit * 100 +.5)/100) + " litres of fuel");
+    
+    /**
+     * Displays the user's fuel savings
+     */
+    public void showLit(TextView text){
+        double lit = 20;
+        text.setText("You have saved " + lit + " litres of fuel");
     }
-    public void showLCo2(TextView text, Conversions conversion){
-        double co2 = conversion.getCO2();
-        text.setText("You have saved " + (int) co2 + " grams of CO2");
+    
+    /**
+     * Display's the CO2 emissions prevented by the user
+     */
+    public void showLCo2(TextView text){
+        int co2 = 50000;
+        text.setText("You have saved " + co2 + " grams of CO2");
     }
-    public void showTrees(TextView text, Conversions conversion){
-        double treesSaved = conversion.getTreeDays();
+    
+    /**
+     * Display's the user's trees saved
+     */
+    public void showTrees(TextView text){
+        double treesSaved = 100;
         text.setText("You have saved "+ (int) treesSaved + " tree days of CO2");
     }
 
+    /**
+     * Loads a tree image - the size of the tree corresponds to how much CO2 emissions the user has prevented
+     */
     public void drawTree(ImageView image) {
         int bronzeT = 100,
                 silverT = 300,
