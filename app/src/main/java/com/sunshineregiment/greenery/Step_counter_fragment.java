@@ -41,10 +41,6 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
 //            Log.d("stepcounterfragment", "onCreateView: NOT NULL ACT ");
 //        }
 
-        dayTextView = (TextView) getActivity().findViewById(R.id.steps_textView);
-        weekTextView = (TextView) getActivity().findViewById(R.id.steps_textView2);
-        lifeTextView = (TextView) getActivity().findViewById(R.id.steps_textView3);
-
         mSensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         mStepCounterSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         mStepDetectorSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);

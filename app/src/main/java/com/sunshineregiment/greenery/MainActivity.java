@@ -1,5 +1,7 @@
 package com.sunshineregiment.greenery;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -7,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +40,17 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                if(tab.getPosition() == 2){
+                    SharedPreferences prefs = getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+                    int steps = prefs.getInt("steps", 0);
+                    TextView dayTextView, weekTextView, lifeTextView;
+                    dayTextView = (TextView) findViewById(R.id.steps_textView);
+                    weekTextView = (TextView) findViewById(R.id.steps_textView2);
+                    lifeTextView = (TextView) findViewById(R.id.steps_textView3);
+                    dayTextView.setText("" + steps);
+                    weekTextView.setText("" + (steps+5432));
+                    lifeTextView.setText("" + (steps+87654));
+                }
                 viewPager.setCurrentItem(tab.getPosition());
             }
 

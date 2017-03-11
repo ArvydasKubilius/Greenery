@@ -4,9 +4,12 @@ package com.sunshineregiment.greenery;
  * Created by Zikoz on 10/03/2017.
  */
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.widget.TextView;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
