@@ -1,7 +1,8 @@
 package com.sunshineregiment.greenery;
 
 /**
- * This is to represents each page as a Fragment that is persistently kept in the fragment manager as long as the user can return to the page.
+ * This is to represents each page as a Fragment that is persistently kept in the fragment manager as long as
+ * the user can return to the page.
  * 
  * Created by Zikoz on 10/03/2017.
  */
@@ -17,7 +18,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
 	/**
-	 * Public constructors
+	 * Public constructor for PagerAdapter - initialises various important classes
 	 * 
 	 * @param FragmentManager
 	 * @param number of tabs
@@ -56,6 +57,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         }
     }
 
+    /**
+     * Getter for number of tabs in the tab manager
+     */
     @Override
     public int getCount() {
         return mNumOfTabs;
