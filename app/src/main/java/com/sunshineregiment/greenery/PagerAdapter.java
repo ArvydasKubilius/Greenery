@@ -22,15 +22,17 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         switch (position) {
             case 0:
                 CO2_fragment tab1 = new CO2_fragment();
+                //Step_counter_fragment tab1 = new Step_counter_fragment();
                 return tab1;
             case 1:
                 Graphs_fragment tab2 = new Graphs_fragment();
                 return tab2;
             case 2:
+                //Graphs_fragment tab3 = new Graphs_fragment();
                 Step_counter_fragment tab3 = new Step_counter_fragment();
                 return tab3;
             case 3:
-                Step_counter_fragment tab4 = new Step_counter_fragment();
+                Leaderboard_fragment tab4 = new Leaderboard_fragment();
                 return tab4;
             default:
                 return null;
