@@ -8,13 +8,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="20dp"
+            android:padding="10dp"
             android:orientation="vertical"
             android:background="@drawable/stepsbg">
 
@@ -47,7 +47,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="20dp"
+        android:padding="10dp"
         android:orientation="vertical"
         android:background="@drawable/stepsbg">
         <TextView
@@ -80,7 +81,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="20dp"
+        android:padding="10dp"
         android:orientation="vertical"
         android:background="@drawable/stepsbg">
 
