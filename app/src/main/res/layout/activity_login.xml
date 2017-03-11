@@ -8,6 +8,37 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="Greenery"
+            android:fontFamily="casual"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:shadowColor="#000000"
+            android:shadowRadius="4"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/logo"
+            android:id="@+id/textView"
+            android:layout_alignTop="@+id/logo"
+            android:layout_centerHorizontal="true" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -21,7 +52,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="20dp"
             android:textColorHint="#ffffff"
             android:layout_marginBottom="4dp">
             <EditText android:id="@+id/input_email"
@@ -54,7 +85,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="8dp"
             android:padding="12dp"
-            android:background="#0277BD"
+            android:background="@color/button"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:text="Login"
@@ -67,7 +98,7 @@
             android:textColor="#ffffff"
             android:text="No account yet? Create one"
             android:gravity="center"
-            android:textSize="16dip"
+            android:textSize="16dp"
             android:clickable="true"
             android:onClick="onClick"/>
 
