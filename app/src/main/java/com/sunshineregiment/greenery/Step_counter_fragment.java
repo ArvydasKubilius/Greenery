@@ -1,6 +1,7 @@
 package com.sunshineregiment.greenery;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -67,6 +68,10 @@ public class Step_counter_fragment extends Fragment implements SensorEventListen
                     public void run() {
                         if (sensor.getType() == Sensor.TYPE_STEP_COUNTER || sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
                             textView.setText("" + value2);
+                            SharedPreferences prefs = getContext().getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.putInt("steps", value2);
+                            editor.commit();
                         }
                     }
                 });
