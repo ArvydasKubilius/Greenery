@@ -1,5 +1,9 @@
 package com.sunshineregiment.greenery;
 
+/**
+ * Tab that shows the current number of steps for day/week/month
+ */
+
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -19,6 +23,9 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
 
     private Sensor mStepDetectorSensor;
 
+    /**
+     * initialise sensors and prepare tab for action
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +40,9 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
                 .getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
     }
 
+    /**
+     * On sensor change, update total steps taken to new value
+     */
     @Override
     public void onSensorChanged(SensorEvent event) {
         final Sensor sensor = event.sensor;
