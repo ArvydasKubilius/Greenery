@@ -1,0 +1,3 @@
+Package that works with data about the user. The only classes that need to be accessed from outside the package are
+SimpleConverter/ComplexConverter & BiometricProfile, and BiometricProfile simply needs to be constructed & passed to
+ComplexConverter.
