@@ -1,6 +1,8 @@
 package com.sunshineregiment.greenery;
 
 /**
+ * This is to represents each page as a Fragment that is persistently kept in the fragment manager as long as the user can return to the page.
+ * 
  * Created by Zikoz on 10/03/2017.
  */
 
@@ -14,11 +16,23 @@ import android.widget.TextView;
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
+	/**
+	 * Public constructors
+	 * 
+	 * @param FragmentManager
+	 * @param number of tabs
+	 */
     public PagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }
 
+	/**
+	 * Return the Fragment associated with a specified position.
+	 * 
+	 * @param position
+	 * @return class Fragment
+	 */
     @Override
     public Fragment getItem(int position) {
 

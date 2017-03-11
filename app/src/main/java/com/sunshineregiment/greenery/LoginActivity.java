@@ -1,5 +1,12 @@
 package com.sunshineregiment.greenery;
 
+/**
+ * Object that handle the login activity
+ * 
+ * @author Sunshine Regiment
+ *
+ */
+
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +26,11 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
+	/**
+	 * To display the login screen
+	 * 
+	 * @param the state of the application
+	 */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +38,12 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.inject(this);
     }
 
+	/**
+	 * Handle the button click activity
+	 * 
+	 * @param button
+	 * @return boolean true
+	 */
     public boolean onClick(View view){
         int id = view.getId();
         if (id == R.id.btn_login){
