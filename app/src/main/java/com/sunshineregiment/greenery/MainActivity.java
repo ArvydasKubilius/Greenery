@@ -1,7 +1,7 @@
 package com.sunshineregiment.greenery;
 
 /**
- * Object that handle the main activity after login
+ * Object that handles the main activity after login
  * 
  * @author Sunshine Regiment
  *
@@ -23,7 +23,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 	/**
-	 * Show the fundamental layout of the app
+	 * Set up the fundamental layout of the app
 	 * 
 	 * @param the state of the application
 	 */
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //make the toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //add some tabs to it
+        //add four tabs to it
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("YOUR IMPACT"));
         tabLayout.addTab(tabLayout.newTab().setText("GRAPHS"));
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 	/**
-	 * Decide the action after the option is chosen
+	 * Carry out associated option when drop-down menu item is selected
 	 * 
 	 * @param menu item
 	 * @return boolean true
