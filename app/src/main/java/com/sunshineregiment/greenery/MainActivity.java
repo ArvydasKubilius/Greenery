@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition() == 2){
+                    //get total steps
                     SharedPreferences prefs = getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
                     int steps = prefs.getInt("steps", 0);
                     TextView dayTextView, weekTextView, lifeTextView;

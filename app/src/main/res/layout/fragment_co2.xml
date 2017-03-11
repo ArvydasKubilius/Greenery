@@ -5,24 +5,36 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    >
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
         android:id="@+id/section_label"
-        android:text="How you are making the world a better place"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="How you are making the world a better place\n This is your tree"
+        android:textAlignment="center" />
 
     <ProgressBar
+        android:id="@+id/progressBarTree"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:progressBackgroundTint="@color/colorPrimaryDark"
-        android:id="@+id/progressBarTree"
-        android:paddingBottom="125px"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:paddingBottom="125px"
+        android:progressBackgroundTint="@color/colorPrimaryDark" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/img_switcher"
+        android:layout_height="500px"
+        android:padding="200px"
+
+        android:layout_below="@+id/section_label"
+        android:layout_alignStart="@+id/section_label"
+        android:layout_marginTop="50dp"
+        android:layout_alignEnd="@+id/section_label" />
 </RelativeLayout>
 
