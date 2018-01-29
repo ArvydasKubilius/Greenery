@@ -8,7 +8,7 @@ The app counts your steps, and shows how much CO2 you've prevented
 from being released into the atmosphere. It also shows how many
 calories you've burned.
 
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GUIDE
 ----------------------------
