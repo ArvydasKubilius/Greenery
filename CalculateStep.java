@@ -13,7 +13,7 @@ public final class CalculateStep {
 	 * according to their height and gender.
 	 * 
 	 * Based on the stride length(length of each step).
-	 * Formula: Women .413 * height / Men .415 * height
+	 * Formula- Women .413 * height / Men .415 * height
 	 * 
 	 * @param profile
 	 * @return number of steps per km
